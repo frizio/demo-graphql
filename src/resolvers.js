@@ -1,4 +1,6 @@
 import { tasks } from "./sample";
+import User from "./models/User";
+
 
 export const resolvers = {
 
@@ -17,6 +19,9 @@ export const resolvers = {
         tasks() {
             return tasks; 
         },
+        async users() {
+            return await User.find(); 
+        },
     },
 
     Mutation: {
@@ -25,6 +30,12 @@ export const resolvers = {
             input._id = tasks.length;
             tasks.push(input);
             return input;
+        },
+        async createUser(_, {input}) {
+            const newUser = new User(input);
+            await newUser.save();
+            console.log(newUser);
+            return newUser;
         }
     }
 
