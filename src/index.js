@@ -14,7 +14,10 @@ app.use(
     graphqlHTTP(
         {
             graphiql: true,
-            schema: schema
+            schema: schema,
+            context: {
+                messageId: 'test'
+            }
         }
     )
 );

@@ -1,7 +1,7 @@
 import { tasks } from "./sample";
 
 export const resolvers = {
-    
+
     Query: {
         hello: () => {
             return 'Hello from GraphQL';
@@ -9,7 +9,8 @@ export const resolvers = {
         getAnInt() {
             return 2;
         },
-        greet(root, {name} ) {
+        greet(root, {name}, ctx ) {
+            console.log(ctx);
             console.log(name);
             return `Hello ${name}.`;
         },
