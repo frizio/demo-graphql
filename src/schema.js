@@ -9,6 +9,14 @@ const typeDefs = `
         hello: String
         getAnInt: Int
         greet(name: String!): String
+        tasks: [Task]
+    }
+
+    type Task {
+        _id: ID
+        title: String!
+        description: String!
+        number: Int
     }
 `;
 
