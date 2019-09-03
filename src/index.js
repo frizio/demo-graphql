@@ -1,10 +1,10 @@
 import express from "express";
 import graphqlHTTP from "express-graphql";
+import schema from "./schema";
 
 const app = express();
 
 // Middleware
-const schema = {};
  
 app.use(
     '/graphql',
